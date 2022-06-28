@@ -3,7 +3,10 @@ import MyBtn from './myBtn';
 
 const AppHeader = () => {
   return (
-    <Container fontWeight={"fontWeightMedium"} style={{display: "flex", backgroundColor: "blue",}}> 
+    <Container
+      fontWeight={'fontWeightMedium'}
+      style={{ display: 'flex', backgroundColor: 'blue' }}
+    >
       <Box justifyContent="start" width="25%">
         <MyBtn
           text={'Login'}
