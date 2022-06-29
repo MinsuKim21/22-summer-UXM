@@ -1,9 +1,14 @@
-import { BrowserRouter } from 'react-router-dom';
-import AppHeader from './AppHeader';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import AppHeader from './components/AppHeader';
 import Home from './Page/Home';
 import Board from './Page/Board';
 import Edit from './Page/Edit';
 import New from './Page/New';
+import LoginForm from './Page/LoginPage/LoginForm';
+import SignUp from './Page/LoginPage/SignUpForm';
+
+// import RouteTest from './components/RouteTest';
+
 // import LoginForm from './LoginPage/LoginForm';
 // import SignUp from './Page/LoginPage/SignUpForm';
 // import MyBtn from './myBtn';
@@ -13,10 +18,16 @@ import New from './Page/New';
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <AppHeader />
-        <Home />
-      </div>
+      <AppHeader />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/new" element={<New />} />
+        <Route path="/edit" element={<Edit />} />
+        <Route path="/board/:id" element={<Board />} />
+        <Route path="/board" element={<Board />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
     </BrowserRouter>
   );
 }
