@@ -69,13 +69,14 @@ const SignUp = () => {
           autoComplete="current-password"
         />
 
-        <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">유형</InputLabel>
+        <FormControl fullWidth margin="normal">
+          <InputLabel id="registerType">가입유형</InputLabel>
           <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
+            labelId="registerType"
+            id="register-type-select"
             value={userType}
-            label="Age"
+            required
+            label="registerType"
             onChange={handleChange}
           >
             <MenuItem value={10}>General</MenuItem>
