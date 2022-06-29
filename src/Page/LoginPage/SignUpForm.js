@@ -1,3 +1,4 @@
+import * as React from 'react';
 import {
   Grid,
   Typography,
@@ -6,9 +7,19 @@ import {
   TextField,
   Box,
   Container,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
 } from '@mui/material';
 
 const SignUp = () => {
+  const [userType, setUserType] = React.useState('');
+
+  const handleChange = (event) => {
+    setUserType(event.target.value);
+  };
+
   return (
     <Container component="main" maxWidth="xs">
       <Box
@@ -58,6 +69,20 @@ const SignUp = () => {
           autoComplete="current-password"
         />
 
+        <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label">유형</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={userType}
+            label="Age"
+            onChange={handleChange}
+          >
+            <MenuItem value={10}>General</MenuItem>
+            <MenuItem value={20}>Uproader</MenuItem>
+          </Select>
+        </FormControl>
+
         <Button
           type="submit"
           fullWidth
@@ -79,5 +104,4 @@ const SignUp = () => {
     </Container>
   );
 };
-
 export default SignUp;
