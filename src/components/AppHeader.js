@@ -28,13 +28,13 @@ const AppHeader = () => {
       </Box>
       <Box justifyContent="center" width="50%" textAlign="center">
         <Typography component="h1" variant="h3">
-          UXM LAB Music
+          제목
         </Typography>
       </Box>
       <Box justifyContent="end" width="25%">
         <Button
           onClick={() => {
-            Navigate('/');
+            Navigate('/home');
           }}
         >
           HOME
