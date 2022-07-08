@@ -31,7 +31,7 @@ const LoginForm = () => {
         }}
       >
         <Typography component="h1" variant="h3">
-          Sign in
+          log in
         </Typography>
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
           <TextField
