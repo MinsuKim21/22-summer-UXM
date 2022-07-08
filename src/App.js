@@ -1,14 +1,13 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AppHeader from './components/AppHeader';
-import Home from './Page/Home';
-import Board from './Page/Board';
-import Edit from './Page/Edit';
-import New from './Page/New';
+import Home from './Page/Main';
+import Board from './Page/BoardPage/BoardMain';
+import Edit from './Page/BoardPage/BoardEdit';
+import New from './Page/BoardPage/BoardAdd';
 import LoginForm from './Page/LoginPage/LoginForm';
 import SignUp from './Page/LoginPage/SignUpForm';
 
 // import RouteTest from './components/RouteTest';
-
 // import LoginForm from './LoginPage/LoginForm';
 // import SignUp from './Page/LoginPage/SignUpForm';
 // import MyBtn from './myBtn';
