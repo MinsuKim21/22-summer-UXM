@@ -80,7 +80,7 @@ const SignUp = () => {
             onChange={handleChange}
           >
             <MenuItem value={10}>General</MenuItem>
-            <MenuItem value={20}>Uproader</MenuItem>
+            <MenuItem value={20}>UpLoader</MenuItem>
           </Select>
         </FormControl>
 
