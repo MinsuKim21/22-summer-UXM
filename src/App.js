@@ -1,17 +1,17 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import AppHeader from './components/AppHeader';
-import Home from './Page/Main';
-import Board from './Page/BoardPage/BoardMain';
-import Edit from './Page/BoardPage/BoardEdit';
-import New from './Page/BoardPage/BoardAdd';
-import LoginForm from './Page/LoginPage/LoginForm';
-import SignUp from './Page/LoginPage/SignUpForm';
+import AppHeader from './components/AppHeader2';
+import Main from './Pages/Main';
+import Library from './Pages/BoardPage/Library';
+import Board from './Pages/BoardPage/BoardMain';
+import New from './Pages/BoardPage/BoardAdd';
+import LoginForm from './Pages/LoginPage/LoginForm';
+import SignUp from './Pages/LoginPage/SignUpForm';
 
 // import RouteTest from './components/RouteTest';
 // import LoginForm from './LoginPage/LoginForm';
 // import SignUp from './Page/LoginPage/SignUpForm';
 // import MyBtn from './myBtn';
-// import TextField from '@mui/material/TextField';
+// import TextField from '@mui/material/TextField';s
 // import Checkbox from '@mui/material/Checkbox';
 // import Button from '@mui/material/Button';
 function App() {
@@ -19,9 +19,10 @@ function App() {
     <BrowserRouter>
       <AppHeader />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Main />} />
+        <Route path="/Main" element={<Main />} />
         <Route path="/new" element={<New />} />
-        <Route path="/edit" element={<Edit />} />
+        <Route path="/library" element={<Library />} />
         <Route path="/board/:id" element={<Board />} />
         <Route path="/board" element={<Board />} />
         <Route path="/login" element={<LoginForm />} />
