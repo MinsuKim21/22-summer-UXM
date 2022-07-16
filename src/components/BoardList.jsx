@@ -1,7 +1,5 @@
 import { Container, Box } from '@mui/material';
-// import { useRef } from 'react';
-// import { Swiper, SwiperSlide } from 'swiper/react';
-import { DataGrid } from '@mui/x-data-grid';
+import DataGridList from './DataGridList';
 import Slider from './Slider';
 const itemData = [
   {
@@ -156,16 +154,8 @@ const BoardList = (props) => {
   return (
     <Container>
       <Slider data={itemData} />
-
       <Box sx={{ height: 400 }}>
-        <DataGrid
-          rows={itemData}
-          columns={columns}
-          pageSize={10}
-          rowsPerPageOptions={[4]}
-          checkboxSelection
-          disableSelectionOnClick
-        />
+        <DataGridList data={itemData} columnData={columns} />
       </Box>
     </Container>
   );
