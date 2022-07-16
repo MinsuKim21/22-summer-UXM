@@ -12,12 +12,27 @@ import {
   Select,
   MenuItem,
 } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
   const [userType, setUserType] = React.useState('');
 
   const handleChange = (event) => {
     setUserType(event.target.value);
+  };
+  const Navigate = useNavigate();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const joinType = userType
+    console.log({
+      name: data.get('name'),
+      email: data.get('email'),
+      password: data.get('password'),
+      checkPassword: data.get('checkPassword'),
+      regiserType: joinType,
+    });
   };
 
   return (
@@ -33,74 +48,89 @@ const SignUp = () => {
         <Typography component="h1" variant="h3">
           Sign Up
         </Typography>
-
-        <TextField
-          margin="normal"
-          label="이름"
-          required
-          fullWidth
-          autoComplete="email"
-          autoFocus
-        />
-
-        <TextField
-          margin="normal"
-          label="이메일"
-          required
-          fullWidth
-          autoComplete="email"
-        />
-
-        <TextField
-          margin="normal"
-          label="비밀번호"
-          type="password"
-          required
-          fullWidth
-          autoComplete="current-password"
-        />
-
-        <TextField
-          margin="normal"
-          label="비밀번호 확인"
-          type="password"
-          required
-          fullWidth
-          autoComplete="current-password"
-        />
-
-        <FormControl fullWidth margin="normal">
-          <InputLabel id="registerType">가입유형</InputLabel>
-          <Select
-            labelId="registerType"
-            id="register-type-select"
-            value={userType}
+        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <TextField
+            margin="normal"
+            label="이름"
+            name="name"
+            id="name"
             required
-            label="registerType"
-            onChange={handleChange}
+            fullWidth
+            autoComplete="name"
+            autoFocus
+          />
+
+          <TextField
+            margin="normal"
+            label="이메일"
+            id="email"
+            name="email"
+            required
+            fullWidth
+            autoComplete="email"
+          />
+
+          <TextField
+            margin="normal"
+            label="비밀번호"
+            id="password"
+            type="password"
+            name="password"
+            required
+            fullWidth
+            autoComplete="current-password"
+          />
+
+          <TextField
+            margin="normal"
+            id="checkPassword"
+            label="비밀번호 확인"
+            type="password"
+            name="checkPassword"
+            required
+            fullWidth
+            autoComplete="current-password"
+          />
+
+          <FormControl fullWidth margin="normal">
+            <InputLabel id="registerType">가입유형</InputLabel>
+            <Select
+              labelId="registerType"
+              id="register-select"
+              value={userType}
+              required
+              label="registerType"
+              onChange={handleChange}
+            >
+              <MenuItem value={'General'}>General</MenuItem>
+              <MenuItem value={'UpLoader'}>UpLoader</MenuItem>
+            </Select>
+          </FormControl>
+
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
           >
-            <MenuItem value={10}>General</MenuItem>
-            <MenuItem value={20}>UpLoader</MenuItem>
-          </Select>
-        </FormControl>
+            회원가입
+          </Button>
 
-        <Button
-          type="submit"
-          fullWidth
-          variant="contained"
-          sx={{ mt: 3, mb: 2 }}
-        >
-          <b>다음</b>
-        </Button>
-
-        <Grid container>
-          <Grid item xs>
-            이미 계정이있으세요?
+          <Grid container>
+            <Grid item xs>
+              이미 계정이있으세요?
+            </Grid>
+            <Grid item>
+              <Link
+                onClick={() => {
+                  Navigate('/login');
+                }}
+              >
+                Log in
+              </Link>
+            </Grid>
           </Grid>
-          <Grid item>
-            <Link>Sign in</Link>
-          </Grid>
-        </Grid>
+        </Box>
       </Box>
     </Container>
   );

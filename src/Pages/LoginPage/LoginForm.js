@@ -9,6 +9,7 @@ import {
   Box,
   Container,
 } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
   const handleSubmit = (event) => {
@@ -20,6 +21,7 @@ const LoginForm = () => {
     });
   };
 
+  const Navigate = useNavigate();
   return (
     <Container component="main" maxWidth="xs">
       <Box
@@ -68,12 +70,14 @@ const LoginForm = () => {
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link href="#" variant="body2">
-                비밀번호 찾기?
-              </Link>
+              <Link href="#">비밀번호 찾기?</Link>
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link
+                onClick={() => {
+                  Navigate('/signup');
+                }}
+              >
                 {'회원가입'}
               </Link>
             </Grid>
