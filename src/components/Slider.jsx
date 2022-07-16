@@ -29,7 +29,7 @@ export default function Slider(props) {
 
   useEffect(() => {
     slideRef.current.style.transition = 'all 0.5s ease-in-out';
-    slideRef.current.style.transform = `translateX(-${currentSlide}00%)`; // 백틱을 사용하여 슬라이드로 이동하는 에니메이션을 만듭니다.
+    slideRef.current.style.transform = `translateX(-${currentSlide}00%)`;
   }, [currentSlide]);
   const style = {
     display: 'inline-block',
@@ -64,10 +64,9 @@ export default function Slider(props) {
 const Container = styled.div`
   width: 100%;
   margin: auto;
-  overflow: hidden; // 선을 넘어간 이미지들은 숨겨줍니다.
+  overflow: hidden;
 `;
 const SliderContainer = styled.div`
   margin: 0 auto;
-  // position: absolute;
   display: flex;
 `;
