@@ -1,5 +1,4 @@
 import { Container } from '@mui/material';
-import Board from './BoardPage/BoardMain';
 // import Loader from '../components/Loader';
 // import { useState } from 'react';
 const Main = () => {
