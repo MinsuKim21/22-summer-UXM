@@ -124,38 +124,13 @@ const itemData = [
   },
 ];
 const BoardList = (props) => {
-  const columns = [
-    {
-      field: 'songName',
-      headerName: '곡명',
-      width: 110,
-      editable: true,
-    },
-    {
-      field: 'artistName',
-      headerName: '아티스트명',
-      width: 150,
-      editable: true,
-    },
-    {
-      field: 'album',
-      headerName: '엘범명',
-      width: 150,
-      editable: true,
-    },
-    {
-      field: 'playTime',
-      headerName: 'Play Time',
-      width: 150,
-      editable: true,
-    },
-  ];
+  
 
   return (
     <Container>
       <Slider data={itemData} />
       <Box sx={{ height: 400 }}>
-        <DataGridList data={itemData} columnData={columns} />
+        <DataGridList data={itemData} />
       </Box>
     </Container>
   );
