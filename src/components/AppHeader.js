@@ -6,11 +6,8 @@ import React from 'react';
 const AppHeader = () => {
   const Navigate = useNavigate();
   return (
-    <Container
-      fontWeight={'fontWeightMedium'}
-      style={{ display: 'flex' }}
-    >
-      <Box justifyContent="start" width="25%">
+    <Container fontWeight={'fontWeightMedium'} style={{ display: 'flex' }}>
+      <Box display="flex" justifyContent="flex-start" width="25%">
         <Button
           onClick={() => {
             Navigate('/login');
@@ -26,18 +23,30 @@ const AppHeader = () => {
           Signup
         </Button>
       </Box>
-      <Box justifyContent="center" width="50%" textAlign="center">
+      <Box
+        display="flex"
+        justifyContent="center"
+        width="50%"
+        textAlign="center"
+      >
         <Typography component="h1" variant="h3">
           제목
         </Typography>
       </Box>
-      <Box justifyContent="end" width="25%">
+      <Box display="flex" justifyContent="flex-end" width="25%">
         <Button
           onClick={() => {
-            Navigate('/home');
+            Navigate('/main');
           }}
         >
           HOME
+        </Button>
+        <Button
+          onClick={() => {
+            Navigate('/board');
+          }}
+        >
+          BOARD
         </Button>
       </Box>
     </Container>

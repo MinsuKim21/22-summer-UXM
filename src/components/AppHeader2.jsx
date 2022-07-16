@@ -1,22 +1,23 @@
 import * as React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { styled, alpha } from '@mui/material/styles';
 import {
   AppBar,
   Box,
   Toolbar,
   IconButton,
-  Typography,
   InputBase,
   Badge,
   MenuItem,
   Menu,
+  ListItemButton,
+  Button,
 } from '@mui/material/';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import MoreIcon from '@mui/icons-material/MoreVert';
-import { minWidth } from '@mui/system';
+import { Container } from '@mui/system';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -59,6 +60,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const AppHeader2 = () => {
+  const Navigate = useNavigate();
+
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
@@ -92,12 +95,36 @@ const AppHeader2 = () => {
   );
 
   return (
-    <Box>
+    <Container>
       <AppBar position="static">
-        <Toolbar variant="dense">git
-          <Typography variant="h6" component="div">
-            SMWYG
-          </Typography>
+        <Toolbar variant="dense">
+          <Button
+            onClick={() => {
+              Navigate('/main');
+            }}
+          >
+            <Box
+              src="logo/logo_transparent.png"
+              component="img"
+              sx={{ width: 50 }}
+            />
+          </Button>
+          <Box sx={{ display: 'inline-' }}>
+            <ListItemButton
+              onClick={() => {
+                Navigate('/main');
+              }}
+            >
+              Home
+            </ListItemButton>
+            <ListItemButton
+              onClick={() => {
+                Navigate('/library');
+              }}
+            >
+              Library
+            </ListItemButton>
+          </Box>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -114,7 +141,7 @@ const AppHeader2 = () => {
               aria-label="badgeContent 값을 바꿔 알림수를 알려준다"
               color="inherit"
             >
-              <Badge badgeContent={0} color="error">
+              <Badge badgeContent={10} color="error">
                 <MailIcon />
               </Badge>
             </IconButton>
@@ -141,7 +168,7 @@ const AppHeader2 = () => {
         </Toolbar>
       </AppBar>
       {renderMenu}
-    </Box>
+    </Container>
   );
 };
 export default AppHeader2;

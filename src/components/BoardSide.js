@@ -13,7 +13,7 @@ const Board = () => {
               Navigate('/board');
             }}
           >
-            <ListItemText primary="Dashboard" />
+            <ListItemText primary="Board" />
           </ListItemButton>
           <ListItemButton
             onClick={() => {

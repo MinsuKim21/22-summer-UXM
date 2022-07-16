@@ -4,28 +4,29 @@ import {
   CardMedia,
   CardContent,
   Typography,
+  Box,
 } from '@mui/material';
 
 const BoardItem = (props) => {
   return (
-    <Card sx={{ maxWidth: 345, minWidth: 150 }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image={props.img}
-          alt="이미지 왜 안나와.."
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {props.album}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {props.artistName}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+    <Box>
+      <Card variant="div" sx={{ display: 'inline-block' }}>
+        <CardActionArea>
+          <CardMedia
+            sx={{ width: '190px', height: '190px' }}
+            component="img"
+            image={props.img}
+            alt="이미지 왜 안나와.."
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h6" component="div">
+              {props.album}
+            </Typography>
+            <Typography color="text.secondary">{props.artistName}</Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </Box>
   );
 };
 export default BoardItem;
