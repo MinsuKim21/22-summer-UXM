@@ -1,37 +1,17 @@
 import { Container } from '@mui/material';
 import { Box } from '@mui/system';
-// import { Box } from '@mui/system';
 import * as React from 'react';
-import BoardItem from '../../components/BoardItem';
+import BoardList from '../../components/BoardList';
 import BoardSide from '../../components/BoardSide';
 
 const Board = (props) => {
-  const music = [
-    {
-      name: '음악이름1',
-      image:
-        '',
-    },
-    // {
-    //   name: '음악이름2',
-    //   image: '이미지 주소2',
-    // },
-    // {
-    //   name: '음악이름3',
-    //   image: '이미지 주소3',
-    // },
-  ];
   return (
-    <Container sx={{ display: 'flex' }}>
-      <Box>
+    <Container sx={{height: '100vh', mt: 2, display:'flex'}}>
+      <Box width={"10%"}>
         <BoardSide />
       </Box>
-      <Box display="flex">
-        <Box>
-          {music.map((music) => {
-            return <BoardItem name={music.name} image={music.image} />;
-          })}
-        </Box>
+      <Box width={"90%"}>
+        <BoardList />
       </Box>
     </Container>
   );
