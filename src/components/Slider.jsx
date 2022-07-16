@@ -31,10 +31,7 @@ export default function Slider(props) {
     slideRef.current.style.transition = 'all 0.5s ease-in-out';
     slideRef.current.style.transform = `translateX(-${currentSlide}00%)`;
   }, [currentSlide]);
-  const style = {
-    display: 'inline-block',
-    width: '',
-  };
+
   return (
     <Container>
       <Box sx={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
@@ -49,7 +46,6 @@ export default function Slider(props) {
         {itemData.map((item) => {
           return (
             <BoardItem
-              style={style}
               img={item.img}
               album={item.album}
               artistName={item.artistName}
