@@ -100,7 +100,7 @@ const AppHeader2 = () => {
         <Toolbar variant="dense">
           <Button
             onClick={() => {
-              Navigate('/main');
+              Navigate('/home');
             }}
           >
             <Box
@@ -112,7 +112,7 @@ const AppHeader2 = () => {
           <Box sx={{ display: 'inline-' }}>
             <ListItemButton
               onClick={() => {
-                Navigate('/main');
+                Navigate('/home');
               }}
             >
               Home

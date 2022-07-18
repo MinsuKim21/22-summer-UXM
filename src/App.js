@@ -19,8 +19,8 @@ function App() {
     <BrowserRouter>
       <AppHeader />
       <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/Main" element={<Main />} />
+        <Route path="/" element={<Board />} />
+        <Route path="/home" element={<Board />} />
         <Route path="/new" element={<New />} />
         <Route path="/library" element={<Library />} />
         <Route path="/board/:id" element={<Board />} />

@@ -17,13 +17,6 @@ const Board = () => {
           </ListItemButton>
           <ListItemButton
             onClick={() => {
-              Navigate('/library');
-            }}
-          >
-            <ListItemText primary="Library" />
-          </ListItemButton>
-          <ListItemButton
-            onClick={() => {
               Navigate('/new');
             }}
           >
