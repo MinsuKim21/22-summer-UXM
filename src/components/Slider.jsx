@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import BoardItem from './BoardItem';
-import { Box, IconButton } from '@mui/material';
+import { Box, IconButton, Typography } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-export default function Slider(props) {
+const Slider = (props) => {
   const TOTAL_SLIDES = 2; // 전체 슬라이드 개수(총3개. 배열로 계산)
   const itemData = props.data;
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -34,13 +34,20 @@ export default function Slider(props) {
 
   return (
     <Container>
-      <Box sx={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
-        <IconButton component="label" color="primary" onClick={PrevSlide}>
-          <ArrowBackIosIcon />
-        </IconButton>
-        <IconButton component="label" color="primary" onClick={NextSlide}>
-          <ArrowForwardIosIcon />{' '}
-        </IconButton>
+      <Box
+        sx={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}
+      >
+        <Typography component="h1" variant="h6">
+          인기차트
+        </Typography>
+        <Box>
+          <IconButton component="label" color="primary" onClick={PrevSlide}>
+            <ArrowBackIosIcon />
+          </IconButton>
+          <IconButton component="label" color="primary" onClick={NextSlide}>
+            <ArrowForwardIosIcon />{' '}
+          </IconButton>
+        </Box>
       </Box>
       <SliderContainer ref={slideRef}>
         {itemData.map((item) => {
@@ -55,8 +62,8 @@ export default function Slider(props) {
       </SliderContainer>
     </Container>
   );
-}
-
+};
+export default Slider;
 const Container = styled.div`
   width: 100%;
   margin: auto;
