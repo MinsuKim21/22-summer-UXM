@@ -6,7 +6,7 @@ const DataGridList = (props) => {
     {
       field: 'songName',
       headerName: '곡명',
-      width: 110,
+      width: 300,
       editable: true,
     },
     {
@@ -24,7 +24,7 @@ const DataGridList = (props) => {
     {
       field: 'playTime',
       headerName: 'Play Time',
-      width: 150,
+      width: 100,
       editable: true,
     },
   ];
@@ -32,10 +32,9 @@ const DataGridList = (props) => {
     <DataGrid
       rows={itemData}
       columns={columns}
+      autoHeight
       pageSize={10}
-      rowsPerPageOptions={[4]}
       checkboxSelection
-      disableSelectionOnClick
     />
   );
 };
