@@ -124,8 +124,6 @@ const itemData = [
   },
 ];
 const BoardList = (props) => {
-  
-
   return (
     <Container>
       <Slider data={itemData} />
