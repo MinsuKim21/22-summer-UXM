@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import { Container } from '@mui/system';
-import BoardSide from '../../components/BoardSide';
+// import BoardSide from '../../components/BoardSide';
 import DataGridList from '../../components/DataGridList';
 const Library = () => {
   const dummyData = [
