@@ -33,7 +33,7 @@ const DataGridList = (props) => {
       rows={itemData}
       columns={columns}
       autoHeight
-      pageSize={10}
+      // pageSize={10}
       checkboxSelection
     />
   );
