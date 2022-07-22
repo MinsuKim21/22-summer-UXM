@@ -150,7 +150,7 @@ const AppHeader2 = () => {
               aria-label="badgeContent 값을 바꿔 알림수를 알려준다"
               color="inherit"
             >
-              <Badge badgeContent={0} color="error">
+              <Badge badgeContent={14} color="error">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
